@@ -1,12 +1,13 @@
 :root {
-  --primary-color: #ffff00;
+  --primary-color: #fff24d;
   --secondary-color: gainsboro;
-  --dark-color: gainsboro;
+  --dark-color: #353535;
+  --light-color: #ffffff;  
   --font-sans: 'Karla', sans-serif; 
   --font-serif: 'Lora', serif; 
-  --font-big: 60px;  
-  --font-medium: 30px;  
-  --font-small: 15px;
+  --font-big: 6em;  
+  --font-medium: 1.5em;  
+  --font-small: 1em;
   --font-heavy: 700;
   --font-light: 400;  
 }
@@ -20,8 +21,8 @@ body {
   font-weight: var(--font-light);
   font-size: var(--font-small);
   line-height: 1.6;
-  background-color: var(--dark-color);
-  color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   margin: 0;
 }
 
@@ -30,6 +31,7 @@ h1 {
   font-size:  var(--font-big);
   font-weight: var(--font-heavy);
   color: var(--primary-color);
+  line-height: 1em;
 }
 
 h2 {
@@ -52,11 +54,13 @@ div {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--dark-color);
+  font-size: var(--font-medium);
+  font-weight: var(--font-light);
 }
 
 a:visited {
-  color: var(--primary-color);
+/*  color: var(--primary-color);*/
 }
 
 a:hover, a:focus {
@@ -65,6 +69,10 @@ a:hover, a:focus {
 
 a:active {
   color: var(--secondary-color);
+}
+
+p{
+  color: var(--dark-color);
 }
 
 button,
@@ -87,40 +95,49 @@ button:focus,
 .button:hover,
 .button:focus  {
   cursor: pointer;
-  opacity: 0.8;
+/*  opacity: 0.8;*/
+  background-color: var(--primary-color);
 }
 
 .button__secondary {
-  background-color: var(--primary-color);
-  opacity: 0.5;
+  width: 300px;
+  height: 70px;
+  background-color: var(--light-color);
+/*  opacity: 0.5;*/
   color: var(--dark-color);
-}
-.navigation-list__item--active {
-  text-decoration: none;
+/*    border: none;*/
+  font-size: var(--font-medium);
 }
 
+
+.contact-form__input{
+    border: none;
+    width: 300px;
+    height: 50px;
+}
 
 /* -------------------------------2020-12-12----*/
 
 .profile__portrait {
   float: right;
-  width: 250px;
-  margin-right: 40px;
-  border-radius: 50%;
+  width: 400px;
+/*  margin-right: 40px;*/
+/*  border-radius: 50%;*/
 }
 
 .profile {
-  max-width: 900px;
+    width: 100%;
+/*  max-width: 1000px;*/
   margin: 0 auto;
-  padding-top: 40px;
+  padding: 10%;
 /*  padding-bottom: 0px;  */
 /*  display: flex;*/
 /*  justify-content: center;*/
 /*  position: relative;*/
 /*  top: 60px;*/
-  min-height: 80vh;
+/*  min-height: 80vh;*/
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
 }
 
 .profile__text {
@@ -132,7 +149,7 @@ button:focus,
 }
 
 .page-header a {
-    color: var(--primary-color);
+    color: var(--dark-color);
 }
 
 .page-header {
@@ -140,12 +157,17 @@ button:focus,
   display: flex;
   width: 100%;
   padding: 20px;
-  border: 1px solid;
-  border-color:   var(--primary-color); 
+  padding-bottom: 0px;
+/*  border-bottom: 1px solid;*/
+  border-color: var(--primary-color); 
 }
 
 .page-header__item {
   flex: 0 1 100px;
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
 }
 
 .page-header__item:last-child {
@@ -183,8 +205,9 @@ button:focus,
 }
 
 .logo {
-    width: 50px;
+    width: 250px;
 }
+
 /* ---------------start grid fallback */
 
 .grid__item {
@@ -228,7 +251,6 @@ button:focus,
     margin: 0 auto;
 }
 
-
 /* -----------------------------------------------------2020-12-15 media queries ----*/
 @media all and (max-width: 500px) {
   .grid {
@@ -259,41 +281,18 @@ button:focus,
 
 /* ------------------------------------animations----*/
 
-@keyframes color-change {
+@keyframes lemon-move {
   from {
-    fill: #edc655;
+    transform: rotate(0deg);
   }
   to {
-    fill: #f76414;
+    transform: rotate(360deg);
   }
 }
-.sun {
-  animation: 4s color-change infinite alternate linear;
+.lemon-turn {
+  animation: 40s lemon-move infinite alternate linear;
 }
 
-@keyframes cloud-move {
-  from {
-    transform: translate(0, 50px);
-  }
-  to {
-    transform: translate(200px, 50px);
-  }
-}
-.cloud-front {
-  animation: 40s cloud-move infinite alternate linear;
-}
-
-@keyframes cloud-move-reverse {
-  from {
-    transform: translate(446px, 48px);
-  }
-  to {
-    transform: translate(100px, 48px);
-  }
-}
-.cloud-back {
-  animation: 50s cloud-move-reverse infinite alternate linear;
-}
 
 /* ----------------------2020-12-27 https://css-tricks.com/almanac/properties/a/animation/----*/
 .element1 {
@@ -319,6 +318,6 @@ button:focus,
   }
   100% {
     transform: scale(1.5);
-    background-color: var(--secondary-color);
+/*    background-color: var(--secondary-color);*/
   }
 }
