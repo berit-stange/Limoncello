@@ -78,10 +78,11 @@ p{
 button,
 .button  {
   /* overwrites browser defaults and resets the border ---------------2020.12.15*/
+  width: 60%;
   border: none;
   display: inline-block;
   font-family: inherit;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--dark-color);
   text-decoration: none;
   padding: 10px;
@@ -120,7 +121,7 @@ button:focus,
 
 .profile__portrait {
   float: right;
-  width: 400px;
+/*  width: 400px;*/
 /*  margin-right: 40px;*/
 /*  border-radius: 50%;*/
 }
@@ -211,9 +212,14 @@ button:focus,
 /* ---------------start grid fallback */
 
 .grid__item {
-     display: inline-block;
-     width: 33%;
+    display: inline-block;
+    width: 33%;
+    background-color: var(--light-color);
 }
+.grid__item h2{
+    color: var(--dark-color);
+}
+
 /* ---------------end grid fallback */
 
 
@@ -226,7 +232,7 @@ button:focus,
      margin: 0;
  }
  .grid__item {
-     background-color: var(--secondary-color);
+     background-color: var(--light-color);
      color: var(--dark-color);
      width: auto;
      min-height: auto;
