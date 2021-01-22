@@ -121,24 +121,18 @@ button:focus,
 
 .profile__portrait {
   float: right;
-/*  width: 400px;*/
+  width: 400px;
 /*  margin-right: 40px;*/
 /*  border-radius: 50%;*/
 }
 
 .profile {
-    width: 100%;
-/*  max-width: 1000px;*/
+  width: 100%;
   margin: 0 auto;
   padding: 10%;
-/*  padding-bottom: 0px;  */
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  position: relative;*/
-/*  top: 60px;*/
-/*  min-height: 80vh;*/
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
 }
 
 .profile__text {
